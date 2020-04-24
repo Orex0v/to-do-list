@@ -23,7 +23,7 @@
               <p class="card-text">{{ post.text}}</p>
               <p class="card-text">Дата создания: {{ post.created_date}}</p>
               <p class="card-text">Дэдлайн: {{ post.deadline}}</p>
-
+              <p class="card-text">{{ post.author }} </p>
               <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-primary">Редактировать</a>
               <a href="#" class="btn btn-primary">Выполненно</a>
 
