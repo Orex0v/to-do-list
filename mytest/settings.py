@@ -108,7 +108,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'europe/moscow'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
