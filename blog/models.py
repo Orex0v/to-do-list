@@ -9,7 +9,7 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     deadline = models.DateTimeField(blank=True, null=True)
-    
+    compile_post = models.BooleanField(default=False)    
     def publish(self):
         self.created_date=timezone.now()
         self.save()

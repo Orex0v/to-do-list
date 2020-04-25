@@ -15,3 +15,9 @@ footer .cizgi { border-right: 1px solid #535e67; }
     margin: 0 auto;
     margin-top: 20px;
 }
+.red{
+    background-color: RED;
+}
+.green{
+    background-color: green;
+}

@@ -16,6 +16,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="nvbCollapse">
 				<ul class="navbar-nav ml-auto">
+
                     {% if user.is_authenticated %}
                     <li class="nav-item pl-1"> 
                         <li class="nav-link">Привет, {{ user.get_username }}</li>
@@ -33,6 +34,12 @@
 						<a class="nav-link" href="{% url "signup"%}"><i class="fa fa-th-list fa-fw mr-1"></i>Регистрация</a>
 					</li>
                     {% endif%}
+                    <li class="nav-item pl-1">
+						<a class="nav-link" href="{% url 'complite'%}?next={{request.path}}"><i class="fa fa-th-list fa-fw mr-1"></i>Выполненные задачи</a>
+					</li>
+                    <li class="nav-item pl-1">
+						<a class="nav-link" href="{% url 'post_list'%}?next={{request.path}}"><i class="fa fa-th-list fa-fw mr-1"></i>Задачи в работе</a>
+					</li>
 
 				</ul>
 			</div>
