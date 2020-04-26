@@ -12,7 +12,8 @@
               <p class="card-text">Дэдлайн: {{ post.deadline}}</p>
               <p class="card-text">Создатель: {{ post.author }} </p>
               <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-primary">Редактировать</a>
-              <a href="#" class="btn btn-primary">Выполненно</a>
+              <a href="{% url 'add' pk=post.pk %}" class="btn btn-primary">В работе</a>
+
 
             </div>
           </div>

@@ -11,9 +11,8 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'text', 'deadline', 'compile_post')
     
-# class CompliteForm(forms.ModelForm):
-#     CHOICES=[(True,'Выполнено'), (False, 'В работе')]
-#     compile_post = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
-#     class Meta:
-#         model = Post
-#         fields = ()
+class CompliteForm(forms.ModelForm):
+    # compile_post = True
+    class Meta:
+        model = Post
+        fields = ()
