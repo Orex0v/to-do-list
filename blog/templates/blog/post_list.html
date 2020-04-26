@@ -2,21 +2,27 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="card post_item">
-            <div class="card-header">
-              {{ post.title }}
-            </div>
-            <div class="card-body {% if post.deadline <= now %} red  {% endif%}"
-              <p class="card-text">{{ post.text}}</p>
-              <p class="card-text">Дата создания: {{ post.created_date}}</p>
-              <p class="card-text">Дэдлайн: {{ post.deadline}}</p>
-              <p class="card-text">Создатель: {{ post.author }} </p>
-              {% if user.is_authenticated %}
-              <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-primary">Редактировать</a>
-              <a href="{% url 'add' pk=post.pk %}" class="btn btn-primary">Выполненно</a>
-              {% endif %}
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card post_item">
+        <div class="card-header card-title">
+          {{ post.title }}
+        </div>
+        <div class="card-body {% if post.deadline <= now %} red  {% endif%}"
+          <p class="card-text card-category">{{ post.text}}</p>
+          <p class="card-text">Дата создания: {{ post.created_date}}</p>
+          <p class="card-text">Дэдлайн: {{ post.deadline}}</p>
+          <p class="card-text">Создатель: {{ post.author }} </p>
+          {% if user.is_authenticated %}
+          <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-primary">Редактировать</a>
+          <a href="{% url 'add' pk=post.pk %}" class="btn btn-primary">Выполненно</a>
+          {% endif %}
 
-            </div>
-          </div>
+        </div>
+    </div>
+  </div>
+</div>
+ </div>
     {% endfor %}
 {% endblock %}

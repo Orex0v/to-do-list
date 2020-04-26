@@ -1,9 +1,60 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form ">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+
+    <div class="container">
+	<div class="row">
+	    
+	    <div class="col-md-8 col-md-offset-2">
+	        
+    		<h1>Создать задачу</h1>
+    		
+    		<form action="" method="POST">{% csrf_token %}
+    		    
+    		    <div class="form-group">
+    		        <label for="slug">Заголовок <span class="require">*</span></label>
+    		        <input type="text" name="title" class="form-control" name="slug" />
+    		    </div>
+    		    
+    		    <div class="form-group">
+    		        <label for="title">Описание задачи <span class="require">*</span></label>
+    		        <textarea rows="5" class="form-control" name="text" ></textarea>
+    		    </div>
+    		    
+    		    <div class="form-group">
+
+				<div class="input-append date form_datetime">
+					<input size="16" type="text" value="" readonly>
+					<span class="add-on"><i class="icon-th"></i></span>
+				</div>
+    		    </div>
+    		    <input size="16" type="text" value="2012-06-15 14:45" readonly class="form_datetime">
+
+    		    <div class="form-group">
+  <!-- элемент input с id = datetimepicker1 -->
+		<div class="input-group" id="datetimepicker1">
+			<input type="text" class="form-control" />
+			<span class="input-group-addon">
+			<span class="glyphicon glyphicon-calendar"></span>
+			</span>
+		</div>
+		</div>
+    		    
+    		    <div class="form-group">
+    		        <button type="submit" class="btn btn-primary">
+    		            Create
+    		        </button>
+    		        <button class="btn btn-default">
+    		            Cancel
+    		        </button>
+    		    </div>
+    		    
+    		</form>
+		</div>
+		
+	</div>
+</div>
+
+ 
 {% endblock %}

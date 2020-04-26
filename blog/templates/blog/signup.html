@@ -1,22 +1,65 @@
 {% extends 'blog/base.html' %}
+
 {% block content %}
-<h2>Регистрация</h2>
 
-<form method="post">
 
-{% csrf_token %}
-{% for field in form %}
-<p>
-  {{ field.label_tag }}<br>
-  {{ field }}
-  {% if field.help_text %}
-  <span>{{ field.help_text }}</span>
-  {% endif %}
-  {% for error in field.errors %}
-  <p>{{ error }}</p>
-  {% endfor %}
-</p>
-{% endfor %}
-<button type="submit">Отправить</button>
-</form>
+		<div class="card bg-light regist-card">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Create Account</h4>
+                <p class="text-center">Get started with your free account</p>
+                <p>
+                    <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+                    <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+                </p>
+                <p class="divider-text">
+                    <span class="bg-light">OR</span>
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                     </div>
+                    <input name="username" class="form-control" placeholder="Username" type="text">
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                     </div>
+                    <input name="email" class="form-control" placeholder="Почта" type="email">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+
+                    <input name="phone_number" class="form-control" placeholder="Номер телефона" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+
+                </div> <!-- form-group end.// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Пароль" name="password1" type="password">
+                    
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Повторите пароль" name='password2' type="password">
+                </div> <!-- form-group// -->                                      
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться </button>
+                </div> <!-- form-group// -->      
+                <p class="text-center">Уже есть аккаунт? <a href="">Войти</a> </p>     
+  
+                                                                  
+            </form>
+            </article>
+            </div> 
+
+
 {% endblock %}

@@ -1,5 +1,7 @@
 from django import forms
-# from django.forms.widgets import SelectDateWidget
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+
 from .models import Post
 
 
@@ -16,3 +18,11 @@ class CompliteForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ()
+
+class SignUpForm(UserCreationForm):
+    username = forms.CharField(max_length=30)
+    email = forms.EmailField(max_length=200)
+    phone_number = forms.CharField(max_length=12)
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'phone_number', 'password1', 'password2', )
