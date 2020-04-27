@@ -1,17 +1,28 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-
+from .widgets import BootstrapDateTimePickerInput
 from .models import Post
+
 
 
 class PostForm(forms.ModelForm):
     CHOICES=[(True,'Выполнено'), (False, 'В работе')]
-    deadline = forms.DateField(widget=forms.SelectDateWidget)
+    deadline = forms.DateTimeField(
+        input_formats=['%d/%m/%Y %H:%M'], 
+        widget=BootstrapDateTimePickerInput()
+    )
     compile_post = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    # deadline = forms.DateTimeField(
+    #     input_formats=['%d/%m/%Y %H:%M'], 
+    #     widget=BootstrapDateTimePickerInput()
+    # )
+    
     class Meta:
         model = Post
-        fields = ('title', 'text', 'deadline', 'compile_post')
+        fields = ('title', 'text', 'deadline', 'compile_post', 'deadline')
+
+   
     
 class CompliteForm(forms.ModelForm):
     # compile_post = True

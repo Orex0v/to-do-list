@@ -1,5 +1,5 @@
-
 $(function () {
-    // идентификатор элемента (например: #datetimepicker1), для которого необходимо инициализировать виджет Bootstrap DateTimePicker
-    $('#datetimepicker1').datetimepicker();
+  $("#datetimepicker1").datetimepicker({
+    format: 'DD/MM/YYYY HH:mm',
   });
+});
