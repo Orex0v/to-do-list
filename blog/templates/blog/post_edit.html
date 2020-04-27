@@ -14,8 +14,14 @@
     <label for="exampleFormControlTextarea1">Описание задачи</label> 
     <textarea class="form-control" required name="text" id="exampleFormControlTextarea1" rows="3">{{ post.text }}</textarea>
   </div>
-  {{ form.deadline }}
-  <div class="form-group">
+<div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" name ='deadline' data-date-format="DD.MM.YYYY HH:mm"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>  <div class="form-group">
     <button type="submit" class="btn btn-primary mt-3">Отправить</button>
   </div>
 
