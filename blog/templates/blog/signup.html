@@ -43,7 +43,9 @@
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
                     <input class="form-control" placeholder="Пароль" name="password1" type="password">
-                    
+                      {% for error in field.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">

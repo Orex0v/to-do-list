@@ -2,11 +2,23 @@
 {% load static %}
 
 {% block content %}
-<h1>Создать задачу</h1>
 <div class="container">
+<h1>Создать задачу</h1>
 <form action="" method="post">
 	{%csrf_token %}
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Заголовок</label>
+    <input type="text" required class="form-control" name="title" id="exampleFormControlInput" value='{{ post.title }}'>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Описание задачи</label> 
+    <textarea class="form-control" required name="text" id="exampleFormControlTextarea1" rows="3">{{ post.text }}</textarea>
+  </div>
   {{ form.deadline }}
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary mt-3">Отправить</button>
+  </div>
+
 
 </form>
 </div>

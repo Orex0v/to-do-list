@@ -6,10 +6,15 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card post_item">
-        <div class="card-header card-title">
-          {{ post.title }}
+        <div class="card-header">
+          <h1>{{ post.title }}</h1>
         </div>
-        <div class="card-body {% if post.deadline <= now %} red  {% endif%}"
+        <div class="card-body  ">
+        {% if post.deadline <= now %}
+        <div class="alert alert-danger" role="alert">
+         Просроченая задача!
+        </div>
+         {% endif%}
           <p class="card-text card-category">{{ post.text}}</p>
           <p class="card-text">Дата создания: {{ post.created_date}}</p>
           <p class="card-text">Дэдлайн: {{ post.deadline}}</p>
